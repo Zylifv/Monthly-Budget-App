@@ -1,0 +1,209 @@
+@media only screen and (max-width: 600px) {
+  body {
+    transform: scale(0.8);
+    margin-top: -150px;
+  }
+  
+  #currency {
+    position: absolute;
+    top: 74px;
+  }
+  
+  #sig {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    padding-left: 170px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  background-color: #f2f4f3;
+}
+
+#wrapper {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+#main {
+  position: relative;
+  margin: auto;
+  border-radius: 5px;
+  width: 500px;
+  height: 720px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 #dedcdc, 0 6px 20px 0 #dedcdc;
+ border: 6px solid #e3e3e3;
+}
+
+h1 {
+  color: #22333b;
+}
+
+h1, h2 {
+  padding-top: 25px;
+  color: #22333b;
+}
+
+#currency {
+  margin: auto;
+  display: inline;
+  color: #000;
+  position: absolute;
+  padding-left: 112px;
+  padding-top: 13.3px;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+}
+
+#limit-value {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  background-color: #8ec7d4;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+}
+
+#expenses {
+  position: relative;
+  margin: auto;
+  padding: 15px;
+  width: 400px;
+  height: 570px;
+  background-color: #c7c9c9;
+}
+
+#outgoings {
+  height: 310px;
+}
+
+#outgoings > li {
+  position: relative;
+  margin: auto;
+  background-color: #fff;
+  margin: 15px;
+  height: 40px;
+  line-height: 40px;
+  list-style-type: upper-roman;
+  
+}
+
+input:focus {
+  outline: none;
+}
+
+nav ul {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#decrease-limit, #increase-limit {
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #f2f4f3;
+  font-size: 1.5em;
+  line-height: 30px;
+}
+
+#decrease-limit:hover, #increase-limit:hover {
+  transform: scale(1.05);
+}
+
+#total-sum {
+  display: inline;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 5px;
+}
+
+#over-under {
+  margin: auto;
+  margin-top: 15px;
+  width: 250px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 0.8em;
+}
+
+#sig {
+  margin: auto;
+  color: grey;
+  position: relative;
+  text-align: center;
+  font-size: 0.6em;
+  letter-spacing: 0.25em;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.list-item {
+  margin: auto;
+  position: relative;
+  margin-top: 9px;
+  margin-right: 10px;
+  width: 60px;
+  height: 20px;
+  float: right;
+  margin-right: 15px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  text-shadow: 1px 0 0 #243642, 0 -1px 0 #243642, 0 1px 0 #243642, -1px 0 0 #243642;
+}
+
+#shopping {
+  background-color: #77B254;
+}
+
+#petrol {
+  background-color: #d25aff;
+}
+
+#elec-gas {
+  background-color: #ffa500;
+}
+
+#self-care {
+  background-color: #38acff;
+}
+
+#hobbies {
+  background-color: #fbe922;
+}
+
+#other {
+ background-color: #fb6a4b; 
+}
+
+#currentTotalSum {
+  margin: auto;
+  background-color: #fff;
+  border: none;
+  height: 40px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#expense-total {
+  color: #fff;
+}

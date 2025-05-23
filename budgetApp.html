@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Monthly Budget App</title>
+  </head>
+    <body>
+      <div id="wrapper">
+      <h1>Monthly Budget App</h1>
+        <div id="main">
+          <h2><i class='fas fa-balance-scale'></i> Manage your monthly budget:</h2>
+            <div id="expenses">
+              <h3 id="monthly-limit">Your monthly limit:</h3>
+              <div id="visual">
+              <button id="decrease-limit" class="fas fa-angle-left"></button>
+              <p id="currency">£</p><div id="limit-value">2000</div>
+              <button id="increase-limit" class='fas fa-angle-right'></button>
+              </div>
+              <p id="over-under"></p>
+              <nav>
+              <ul id="outgoings">
+                <li id="shopping"><i class='fas fa-shopping-cart'></i> Shopping: <input type="number" id="shopping" class="list-item"</input></li>
+                <li id="fuel"><i class='fas fa-gas-pump'></i> Petrol: <input type="number" id="petrol" class="list-item"</input></li>
+                <li id="elec_gas"><i class='far fa-lightbulb'></i> Electricity/Gas: <input type="number" id="elec-gas" class="list-item"</input></li>
+                <li id="self_care"><i class='fas fa-coffee'></i> Self Care: <input type="number" id="self-care" class="list-item"</input></li>
+                <li id="hobbies"><i class='fas fa-swimmer'></i> Hobbies: <input type="number" id="hobbies" class="list-item"</input></li>
+                <li id="other"><i class='far fa-sticky-note'></i> Miscellaneous/Other: <input type="number" id="other" class="list-item"</input></li>
+              </ul>
+             </nav>
+              <button id="currentTotalSum" onclick="totalBudget()">Click to view sum!</button>
+              <div id="expense-total">Your current total is: <p id="total-sum"></p></div>
+          </div>
+          </div>
+      </div>
+      <div id="sig">- By R McGregor</div>
+      <script src="script.js"></script>
+  </body>
+</html>

@@ -39,15 +39,13 @@ function totalBudget() {
   if (totalSum < limitVal.innerText) {
     document.getElementById("over-under").textContent = "You are currently under budget!";
     document.getElementById("over-under").style.backgroundColor = "#77B254";
-    document.getElementById("limit-value").innerHTML = val;
     } else if (totalSum == limitVal.innerText) {
       document.getElementById("over-under").textContent = "You are currently on-budget.";
       document.getElementById("over-under").style.backgroundColor = "#FFC145";
-      document.getElementById("limit-value").innerHTML = val;
       } else if (totalSum > limitVal.innerText) {
         document.getElementById("over-under").textContent = "You are currently over-budget!";
         document.getElementById("over-under").style.fontWeight = "bold";
-        document.getElementById("limit-value").innerHTML = val;
         document.getElementById("over-under").style.backgroundColor = "#D84040";
     }
+      document.getElementById("limit-value").innerHTML = val;
 }

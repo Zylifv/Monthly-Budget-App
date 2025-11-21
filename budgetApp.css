@@ -17,6 +17,15 @@
   }
 }
 
+:root {
+  --red: #FFADAD;
+  --orange: #FFD6A5;
+  --yellow: #FDFFB6;
+  --green: #d5e8e4;
+  --blue: #D9EDF8;
+  --purple: #DEDAF4;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -38,7 +47,7 @@ body {
   height: 720px;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 #dedcdc, 0 6px 20px 0 #dedcdc;
- border: 6px solid #e3e3e3;
+  border: 6px solid #e3e3e3;
 }
 
 h1 {
@@ -67,7 +76,7 @@ h1, h2 {
   position: relative;
   display: inline-block;
   margin: auto;
-  background-color: #8ec7d4;
+  background-color: #bae1ff;
   width: 300px;
   height: 50px;
   line-height: 50px;
@@ -83,7 +92,7 @@ h1, h2 {
   padding: 15px;
   width: 400px;
   height: 570px;
-  background-color: #c7c9c9;
+  background-color: #e7ebee;
 }
 
 #outgoings {
@@ -170,27 +179,27 @@ nav ul {
 }
 
 #shopping {
-  background-color: #77B254;
+  background-color: var(--green);
 }
 
 #petrol {
-  background-color: #d25aff;
+  background-color: var(--purple);
 }
 
 #elec-gas {
-  background-color: #ffa500;
+  background-color: var(--orange);
 }
 
 #self-care {
-  background-color: #38acff;
+  background-color: var(--blue);
 }
 
 #hobbies {
-  background-color: #fbe922;
+  background-color: var(--yellow);
 }
 
 #other {
- background-color: #fb6a4b; 
+ background-color: var(--red); 
 }
 
 #currentTotalSum {
@@ -205,5 +214,5 @@ nav ul {
 }
 
 #expense-total {
-  color: #fff;
+  color: #000;
 }

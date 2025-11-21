@@ -15,6 +15,8 @@ decreaseLimitBtn.addEventListener("click", () => {
   limitVal.innerText = Number(limitVal.innerText) - 10;
 }); 
 
+
+
 document.getElementById("over-under").textContent = "Your budget position will be displayed here";
 
 
@@ -33,19 +35,20 @@ function totalBudget() {
     let remain = limitValNum - (shopVal + fuelVal + elecGas + selfCare + hobbies + other);
 
     let val = `
-      <div id="limit-value" style="background: linear-gradient(to right, #77B254 0%, #77B254 ${shopVal}%, #d25aff ${shopVal}%, #d25aff ${shopVal + fuelVal}%, #ffa500 ${shopVal + fuelVal}%, #ffa500 ${shopVal + fuelVal + elecGas}%, #38acff ${shopVal + fuelVal + elecGas}%, #38acff ${shopVal + fuelVal + elecGas + selfCare}%, #fbe922 ${shopVal + fuelVal + elecGas + selfCare}%, #fbe922 ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #fb6a4b ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #fb6a4b ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, #fff ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%)">${limitVal.innerText}</div>
+    
+      <div id="limit-value" style="background: linear-gradient(to right, #d5e8e4 0%, #d5e8e4 ${shopVal}%, #DEDAF4 ${shopVal}%, #DEDAF4 ${shopVal + fuelVal}%, #FFD6A5 ${shopVal + fuelVal}%, #FFD6A5 ${shopVal + fuelVal + elecGas}%, #D9EDF8 ${shopVal + fuelVal + elecGas}%, #D9EDF8 ${shopVal + fuelVal + elecGas + selfCare}%, #FDFFB6 ${shopVal + fuelVal + elecGas + selfCare}%, #FDFFB6 ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #FFADAD ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #FFADAD ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, #fff ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%)">${limitVal.innerText}</div>
     `
     limitVal.style.fontSize = "1em";
   if (totalSum < limitVal.innerText) {
     document.getElementById("over-under").textContent = "You are currently under budget!";
-    document.getElementById("over-under").style.backgroundColor = "#77B254";
-    } else if (totalSum == limitVal.innerText) {
-      document.getElementById("over-under").textContent = "You are currently on-budget.";
-      document.getElementById("over-under").style.backgroundColor = "#FFC145";
-      } else if (totalSum > limitVal.innerText) {
-        document.getElementById("over-under").textContent = "You are currently over-budget!";
-        document.getElementById("over-under").style.fontWeight = "bold";
-        document.getElementById("over-under").style.backgroundColor = "#D84040";
+    document.getElementById("over-under").style.backgroundColor = "#d5e8e4";
+  } else if (totalSum == limitVal.innerText) {
+    document.getElementById("over-under").textContent = "You are currently on-budget.";
+    document.getElementById("over-under").style.backgroundColor = "#ffdfba";
+  } else if (totalSum > limitVal.innerText) {
+    document.getElementById("over-under").textContent = "You are currently over-budget!";
+    document.getElementById("over-under").style.fontWeight = "bold";
+    document.getElementById("over-under").style.backgroundColor = "	#ffb3ba";
     }
-      document.getElementById("limit-value").innerHTML = val;
+   document.getElementById("limit-value").innerHTML = val;
 }

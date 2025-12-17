@@ -35,8 +35,7 @@ function totalBudget() {
     let remain = limitValNum - (shopVal + fuelVal + elecGas + selfCare + hobbies + other);
 
     let val = `
-    
-      <div id="limit-value" style="background: linear-gradient(to right, #d5e8e4 0%, #d5e8e4 ${shopVal}%, #DEDAF4 ${shopVal}%, #DEDAF4 ${shopVal + fuelVal}%, #FFD6A5 ${shopVal + fuelVal}%, #FFD6A5 ${shopVal + fuelVal + elecGas}%, #D9EDF8 ${shopVal + fuelVal + elecGas}%, #D9EDF8 ${shopVal + fuelVal + elecGas + selfCare}%, #FDFFB6 ${shopVal + fuelVal + elecGas + selfCare}%, #FDFFB6 ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #FFADAD ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, #FFADAD ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, #fff ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%)">${limitVal.innerText}</div>
+      <div id="limit-value" style="background: linear-gradient(to right, var(--green) 0%, var(--green) ${shopVal}%, var(--purple) ${shopVal}%, var(--purple) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, #FFF ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%)">${limitVal.innerText}</div>
     `
     limitVal.style.fontSize = "1em";
   if (totalSum < limitVal.innerText) {

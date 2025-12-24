@@ -1,15 +1,19 @@
+/*A simple budget app that allows the user to input what spenidng they budget for in each category and see real-time result based on those habits.
+I will eventually put in a way for the user to add extra categories should they wish but for now this was just a way to test my skills so far on my coding journey.
+*/
+
 const decreaseLimitBtn = document.getElementById("decrease-limit");
 const increaseLimitBtn = document.getElementById("increase-limit");
 const limitVal = document.getElementById("limit-value");
 
 
-increaseLimitBtn.addEventListener("click", () => {
+increaseLimitBtn.addEventListener("click", () => { //Allows the user to increase their monthly budget
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
   limitVal.innerText = Number(limitVal.innerText) + 10;
 }); 
 
-decreaseLimitBtn.addEventListener("click", () => {
+decreaseLimitBtn.addEventListener("click", () => { //Allows the user to decreasetheir monthly budget
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
   limitVal.innerText = Number(limitVal.innerText) - 10;

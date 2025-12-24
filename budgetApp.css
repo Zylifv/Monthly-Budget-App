@@ -24,6 +24,7 @@
   --green: #77DD77;
   --blue: #A9BCFF;
   --purple: #C9A0DC;
+  --pink: #FFBDDA;
 }
 
 body {
@@ -202,7 +203,11 @@ nav ul {
  background-color: var(--red); 
 }
 
-#currentTotalSum {
+#EBS {
+  background-color: var(--pink);
+}
+
+#currentTotalSum, #add-extra-btn {
   margin: auto;
   background-color: #fff;
   border: none;

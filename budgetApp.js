@@ -1,5 +1,7 @@
-/*A simple budget app that allows the user to input what spenidng they budget for in each category and see real-time result based on those habits.
+/*
+A simple budget app that allows the user to input what spenidng they budget for in each category and see real-time result based on those habits.
 I will eventually put in a way for the user to add extra categories should they wish but for now this was just a way to test my skills so far on my coding journey.
+I would like to add a random colour array so that each time a new budget section is added and edited, the colour will change. I already use this in my Yahtzee game so the logic has already been figured out.
 */
 
 const decreaseLimitBtn = document.getElementById("decrease-limit");

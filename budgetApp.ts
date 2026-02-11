@@ -9,13 +9,13 @@ const increaseLimitBtn = document.getElementById("increase-limit");
 const limitVal = document.getElementById("limit-value");
 
 
-increaseLimitBtn.addEventListener("click", () => { //Allows user to increase their monthly budget allowance
+increaseLimitBtn.addEventListener("click", () => { //allows user to increase monthly limit
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
   limitVal.innerText = Number(limitVal.innerText) + 10;
 }); 
 
-decreaseLimitBtn.addEventListener("click", () => { //Allows user to decrease their monthly budget allowance
+decreaseLimitBtn.addEventListener("click", () => { //allows user to decrease monthly limit
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
   limitVal.innerText = Number(limitVal.innerText) - 10;
@@ -49,21 +49,23 @@ function totalBudget() {
   const budgetArr = [...document.getElementsByClassName("list-item")].map((i) => Number(i.value));
   for (const item of budgetArr) {console.log(item)}
   
-  let totalSum = budgetArr.reduce((acc, el) => acc + el, 0);
-  let limitValNum = Number(limitVal.innerText);
+  let totalSum : number = budgetArr.reduce((acc, el) => acc + el, 0);
+  let limitValNum : number = Number(limitVal.innerText);
   document.getElementById("total-sum").innerText = "£" + totalSum;
   
-    let shopVal = ((budgetArr[0] / limitValNum) * 100);
-    let fuelVal = ((budgetArr[1] / limitValNum) * 100);
-    let elecGas = ((budgetArr[2] / limitValNum) * 100);
-    let selfCare = ((budgetArr[3] / limitValNum) * 100);
-    let hobbies = ((budgetArr[4] / limitValNum) * 100);
-    let other = ((budgetArr[5] / limitValNum) * 100);
-    let userAdded = ((budgetArr[6] / limitValNum) * 100);
-    let remain = limitValNum - (shopVal + fuelVal + elecGas + selfCare + hobbies + other + userAdded);
+    let shopVal : number = ((budgetArr[0] / limitValNum) * 100);
+    let fuelVal : number = ((budgetArr[1] / limitValNum) * 100);
+    let elecGas : number = ((budgetArr[2] / limitValNum) * 100);
+    let selfCare : number = ((budgetArr[3] / limitValNum) * 100);
+    let hobbies : number = ((budgetArr[4] / limitValNum) * 100);
+    let other : number = ((budgetArr[5] / limitValNum) * 100);
+    let userAdded : number = ((budgetArr[6] / limitValNum) * 100);
+    let remain : number = limitValNum - (shopVal + fuelVal + elecGas + selfCare + hobbies + other + userAdded);
 
-    let val = `
+    //checks if the user has added the extra slot or not
+    let val = userAdded > 0 ? `
       <div id="limit-value" style="background: linear-gradient(to right, var(--green) 0%, var(--green) ${shopVal}%, var(--purple) ${shopVal}%, var(--purple) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, var(--pink) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, var(--pink) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other + userAdded}%, #FFF ${shopVal + fuelVal + elecGas + selfCare + hobbies + other + userAdded}%)">${limitVal.innerText}</div>
+    ` : `<div id="limit-value" style="background: linear-gradient(to right, var(--green) 0%, var(--green) ${shopVal}%, var(--purple) ${shopVal}%, var(--purple) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal}%, var(--orange) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas}%, var(--blue) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare}%, var(--yellow) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies}%, var(--red) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, var(--pink) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, var(--pink) ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%, #FFF ${shopVal + fuelVal + elecGas + selfCare + hobbies + other}%)">${limitVal.innerText}</div>
     `
     
     limitVal.style.fontSize = "1em";

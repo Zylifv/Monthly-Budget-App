@@ -4,31 +4,33 @@ I will eventually put in a way for the user to add extra categories should they 
 I would like to add a random colour array so that each time a new budget section is added and edited, the colour will change. I already use this in my Yahtzee game so the logic has already been figured out.
 */
 
-const decreaseLimitBtn = document.getElementById("decrease-limit");
-const increaseLimitBtn = document.getElementById("increase-limit");
-const limitVal = document.getElementById("limit-value");
+const decreaseLimitBtn = document.getElementById("decrease-limit") as HTMLButtonElement;
+const increaseLimitBtn = document.getElementById("increase-limit") as HTMLButtonElement;
+const addExtraSlotBtn = document.getElementById("add-extra-btn") as HTMLButtonElement;
+const limitVal = document.getElementById("limit-value") as HTMLDivElement;
+const overUnder = document.getElementById("over-under") as HTMLParagraphElement;
+let totalSumVal = document.getElementById("total-sum") as HTMLParagraphElement;
 
 
-increaseLimitBtn.addEventListener("click", () => { //allows user to increase monthly limit
+increaseLimitBtn.addEventListener("click", (event) => { //allows user to increase monthly limit
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
-  limitVal.innerText = Number(limitVal.innerText) + 10;
+  limitVal.innerText = `${Number(limitVal.innerText) + 10}`;
 }); 
 
-decreaseLimitBtn.addEventListener("click", () => { //allows user to decrease monthly limit
+decreaseLimitBtn.addEventListener("click", (event) => { //allows user to decrease monthly limit
   event.preventDefault();
   limitVal.style.fontSize = "1.3em";
-  limitVal.innerText = Number(limitVal.innerText) - 10;
+  limitVal.innerText = `${Number(limitVal.innerText) - 10}`;
 }); 
 
 
-
-document.getElementById("over-under").textContent = "Your budget position will be displayed here";
+overUnder.textContent = "Your budget position will be displayed here";
 
 
 function addOutgoing() {
   
-  document.getElementById("add-extra-btn").style.display = "none";
+  addExtraSlotBtn.style.display = "none";
   let li = document.createElement("li");
   let input = document.createElement("input");
   let sym = document.createElement("i");
@@ -41,7 +43,7 @@ function addOutgoing() {
       li.appendChild(sym);
       li.innerHTML += " Extra Budget Slot:";
       li.appendChild(input);
-      document.getElementById("outgoings").appendChild(li);
+      (document.getElementById("outgoings") as any).appendChild(li);
 }
 
 
@@ -51,7 +53,7 @@ function totalBudget() {
   
   let totalSum : number = budgetArr.reduce((acc, el) => acc + el, 0);
   let limitValNum : number = Number(limitVal.innerText);
-  document.getElementById("total-sum").innerText = "£" + totalSum;
+  totalSumVal.innerText = `£${totalSum}`;
   
     let shopVal : number = ((budgetArr[0] / limitValNum) * 100);
     let fuelVal : number = ((budgetArr[1] / limitValNum) * 100);
@@ -69,16 +71,16 @@ function totalBudget() {
     `
     
     limitVal.style.fontSize = "1em";
-  if (totalSum < limitVal.innerText) {
-    document.getElementById("over-under").textContent = "You are currently under budget!";
-    document.getElementById("over-under").style.backgroundColor = "#d5e8e4";
-  } else if (totalSum == limitVal.innerText) {
-    document.getElementById("over-under").textContent = "You are currently on-budget.";
-    document.getElementById("over-under").style.backgroundColor = "#ffdfba";
-  } else if (totalSum > limitVal.innerText) {
-    document.getElementById("over-under").textContent = "You are currently over-budget!";
-    document.getElementById("over-under").style.fontWeight = "bold";
-    document.getElementById("over-under").style.backgroundColor = "	#ffb3ba";
+  if (totalSum < limitValNum) {
+    overUnder.textContent = "You are currently under budget!";
+    overUnder.style.backgroundColor = "#d5e8e4";
+  } else if (totalSum == limitValNum) {
+    overUnder.textContent = "You are currently on-budget.";
+    overUnder.style.backgroundColor = "#ffdfba";
+  } else if (totalSum > limitValNum) {
+    overUnder.textContent = "You are currently over-budget!";
+    overUnder.style.fontWeight = "bold";
+    overUnder.style.backgroundColor = "	#ffb3ba";
     }
-   document.getElementById("limit-value").innerHTML = val;
+   (document.getElementById("limit-value") as any).innerHTML = val;
 }
